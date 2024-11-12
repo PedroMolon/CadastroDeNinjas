@@ -1,18 +1,25 @@
-package dev.java10x.CadastroDeNinjas;
+package dev.java10x.CadastroDeNinjas.Ninjas;
 
+import dev.java10x.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
 
 @Entity // transformo a classe em uma entidade no banco do dados
         // JPA = Java Persistence API
-@Table(name = "tb_cadastro")
+@Table(name = "tb_cadastro_ninja")
 public class NinjaModel {
 
     @Id // marca que a variavel logo abaixo é um id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // estragégia para gerar o ID
     private Long id;
     private String nome;
+
     private String email;
+
     private int idade;
+
+    // Varias missoes para um ninja
+    @ManyToOne
+    private MissaoModel missoes;
 
     public NinjaModel() {
     }
