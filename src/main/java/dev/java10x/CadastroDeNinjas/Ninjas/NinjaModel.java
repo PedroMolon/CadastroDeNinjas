@@ -1,6 +1,6 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
-import dev.java10x.CadastroDeNinjas.Missoes.MissaoModel;
+import dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,6 +29,6 @@ public class NinjaModel {
     // Varias missoes para um ninja
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreign Key ou chave estrangeira
-    private MissaoModel missoes;
+    private MissoesModel missoes;
 
 }
