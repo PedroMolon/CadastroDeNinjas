@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_cadastro_missao")
+@Table(name = "tb_missoes")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -23,6 +23,6 @@ public class MissoesModel {
 
     // Um ninja para varias missoes
     @OneToMany(mappedBy = "missoes") // Mapeamento de tabelas
-    private List<NinjaModel> ninja;
+    private List<NinjaModel> ninjas;
 
 }

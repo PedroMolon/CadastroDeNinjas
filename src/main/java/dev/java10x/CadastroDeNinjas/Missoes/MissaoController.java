@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class MissaoController {
 
-    @GetMapping("/getMissaoController")
+    @GetMapping("/missaoController")
     public String missaoController() {
         return "Classe Missao Controller";
     }

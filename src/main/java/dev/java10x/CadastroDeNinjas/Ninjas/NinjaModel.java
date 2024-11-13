@@ -7,7 +7,7 @@ import lombok.*;
 // Transforma a classe em uma entidade no banco do dados
 // JPA = Java Persistence API
 @Entity
-@Table(name = "tb_cadastro_ninja")
+@Table(name = "tb_cadastro")
 // Annotations Lombok (Constructors, Getters, Setters)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,6 +28,9 @@ public class NinjaModel {
 
     @Column(name = "img_url")
     private String imgUrl;
+
+    @Column(name = "rank")
+    private String rank;
 
     @Column(name = "idade")
     private int idade;
