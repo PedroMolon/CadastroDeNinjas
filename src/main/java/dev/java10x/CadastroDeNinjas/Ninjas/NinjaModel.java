@@ -20,6 +20,8 @@ public class NinjaModel {
 
     private String nome;
 
+    // Coluna do email sera unica
+    @Column(unique = true)
     private String email;
 
     private int idade;
