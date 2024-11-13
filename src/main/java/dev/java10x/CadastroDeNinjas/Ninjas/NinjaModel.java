@@ -2,11 +2,16 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import dev.java10x.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
+import lombok.*;
 
-// transformo a classe em uma entidade no banco do dados
+// Transforma a classe em uma entidade no banco do dados
 // JPA = Java Persistence API
 @Entity
 @Table(name = "tb_cadastro_ninja")
+// Annotations Lombok (Constructors, Getters, Setters)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class NinjaModel {
 
     @Id // marca que a variavel logo abaixo é um id
@@ -24,55 +29,4 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") // Foreign Key ou chave estrangeira
     private MissaoModel missoes;
 
-    public NinjaModel() {
-    }
-
-    public NinjaModel(Long id, String nome, String email, int idade) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    @Override
-    public String toString() {
-        return "NinjaModel{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", idade=" + idade +
-                '}';
-    }
 }
