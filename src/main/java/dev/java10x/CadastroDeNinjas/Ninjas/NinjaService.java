@@ -24,10 +24,15 @@ public class NinjaService {
         return ninjaRepository.findAll();
     }
 
-    // Listar o ninja por id
+    // Listar um ninja por id
     public NinjaModel listaNinjaPorId(Long id) {
         Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
+    }
+
+    // Deletar um ninja por id - tem que ser um método void
+    public void removerNinjaPorId(Long id) {
+        ninjaRepository.deleteById(id);
     }
 
 }
