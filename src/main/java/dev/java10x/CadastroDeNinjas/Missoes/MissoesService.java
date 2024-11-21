@@ -27,6 +27,14 @@ public class MissoesService {
         return missaoPorId.orElse(null);
     }
 
+    public MissoesModel alterarNinjaPorId(Long id, MissoesModel missaoAlterada) {
+        if (missoesRepository.existsById(id)) {
+            missaoAlterada.setId(id);
+            missoesRepository.save(missaoAlterada);
+        }
+        return null;
+    }
+
     public void removerMissaoPorId(Long id) {
         missoesRepository.deleteById(id);
     }
