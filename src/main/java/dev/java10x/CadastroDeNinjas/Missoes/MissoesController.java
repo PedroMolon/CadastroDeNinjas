@@ -15,22 +15,22 @@ public class MissoesController {
     }
 
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@RequestBody MissoesModel missao) {
+    public MissoesDTO criarMissao(@RequestBody MissoesDTO missao) {
         return missoesService.criarMissao(missao);
     }
 
     @GetMapping("/listar")
-    public List<MissoesModel> listarMissoes() {
+    public List<MissoesDTO> listarMissoes() {
         return missoesService.listarMissoes();
     }
 
     @GetMapping("/listar/{id}")
-    public MissoesModel listarMissoesPorId(@PathVariable Long id) {
+    public MissoesDTO listarMissoesPorId(@PathVariable Long id) {
         return missoesService.listarMissaoPorId(id);
     }
 
     @PutMapping("/alterar/{id}")
-    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missao) {
+    public MissoesDTO alterarMissao(@PathVariable Long id, @RequestBody MissoesDTO missao) {
         return missoesService.alterarNinjaPorId(id, missao);
     }
 
